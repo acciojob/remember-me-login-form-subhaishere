@@ -1,20 +1,10 @@
 //your JS code here. If required.
+let formEle = document.querySelector("form");
 
-const check=document.getElementById("checkbox");
-const submit=document.getElementById("submit");
-const form=document.getElementById("form");
+formEle.addEventListener("submit", submitForm);
 
-form.addEventListener("submit", (e)=>{
-  e.preventDefault();
-  const name1=document.getElementById("username").value;
-const pass=document.getElementById("password").value;
- let userData=[name1, pass]
-  if(check.checked == true){
-   
-    localStorage.setItem("user", JSON.stringify(userData))
-  }
-  else{
-  
-    localStorage.clear("user");
-  }
-})
+function submitForm(e){
+	e.preventDefault();
+	let checkEle = document.getElementById("checkbox").checked;
+	alert( `${checkEle}`);
+}
